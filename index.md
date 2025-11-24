@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "About Me"
+title: "Irfan Wahendra"
 excerpt: "About Irfan Wahendra"
 author_profile: true
 redirect_from:
