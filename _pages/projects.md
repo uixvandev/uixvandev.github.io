@@ -5,7 +5,13 @@ permalink: /projects/
 author_profile: true
 ---
 
-## Teamly — AI-powered Founder Matching Platform
+## [Teamly](https://teamly.asia) AI-powered Founder Matching Platform
+
+<p style="text-align: center;">
+  <img src="/images/teamly.jpg"
+       alt="Teamly"
+       style="max-width: 100%; border-radius: 32px;">
+</p>
 
 • Platform to match early-stage founders and collaborators based on roles (Hacker, Hipster, Hustler), skills, and values.  
 • Uses AI (embeddings, scoring, profile matching) to form complementary startup teams.  
@@ -14,14 +20,10 @@ author_profile: true
 
 ## Appskep — iOS Nursing Exam Learning App
 
+• Academic project building an iOS learning app with SwiftUI and backend services.  
 • Mobile learning app for Indonesian nursing students preparing for UKOM.  
 • Features: tryout questions, explanations, AI chatbot, AI scoring, and subscription/payments integration.  
-• Tech stack: SwiftUI (iOS), Golang backend, React-based dashboards, Midtrans or similar payment gateway.
-
-## Undergraduate Thesis Project — Mobile UKOM Learning System
-
-• Academic project building an iOS learning app with SwiftUI and backend services.  
-• Uses Golang, React, and Gemini API to deliver personalized learning and improved accessibility.
+• Tech stack: SwiftUI (iOS), Golang backend, React-based dashboards, Midtrans payment gateway.
 
 ---
 

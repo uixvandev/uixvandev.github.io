@@ -10,3 +10,5 @@
 main:
   - title: "Projects"
     url: /projects/
+  - title: "CV"
+    url: /files/IrfanWahendra_CV.pdf
