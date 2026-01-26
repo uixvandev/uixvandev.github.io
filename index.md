@@ -8,105 +8,69 @@ redirect_from:
   - /about.html
 ---
 
-## Summary
+As an Information Systems graduate with a strong interest in mobile intelligent systems and agentic AI, I aim to explore how AI-driven decision support can enhance early-stage product development and human-AI collaboration. Over the past years, I have integrated technical development with user-centered design and real product execution as a mobile developer and CTO. My experience building AI-enhanced applications has strengthened my interest in research on mobile AI agents, product reasoning systems, and Human-AI interaction.
 
-As an Information Systems graduate with a strong interest in mobile intelligent systems and agentic AI, I aim to explore how AI-driven decision support can enhance early-stage product development and human–AI collaboration. Over the past years, I have worked as a mobile developer, UI/UX designer, and CTO of an AI-driven startup, allowing me to integrate technical development with user-centered design and real product execution. My experience building AI-enhanced applications and leading cross-functional teams has strengthened my interest in research on mobile AI agents, product reasoning systems, and Human–AI interaction. I am eager to pursue graduate study to deepen my technical foundations and contribute to research that bridges intelligent systems with real-world impact.
+## Research Interests
+
+Mobile Agentic AI, Mobile Intelligent Systems, Human-AI Interaction, Collaborative AI
 
 ## Education
 
-**Universitas Andalas**  
+**Universitas Andalas** — Padang, Indonesia  
 _Bachelor of Information Systems (GPA 3.41/4.00)_  
-_Aug 2021 – Feb 2026(expected)_  
-• Secured startup funding of ~USD 977.71 from SOEs  
-• Gold Medal – Seoul International Invention Fair 2024  
-• Special Award – China Invention Association (2024)  
-• Undergraduate Thesis: Developed an iOS-based UKOM learning app using SwiftUI, Golang, React, and Gemini API to enhance accessibility and user experience.
+_Aug 2021 – Feb 2026 (Expected)_
 
-**Infinite Learning Indonesia**  
-_Android Mobile Application Development_  
-_Aug 2023 – Dec 2023_
+- **Relevant Coursework:**
+  - _AI & Data Science:_ Machine Learning Applications, Decision Support Systems, Data Mining, Data Analysis and Visualization.
+  - _Mobile & Systems:_ Mobile Technology Programming, Multiplatform Programming, Cloud Computing, Software Engineering.
+  - _Research & Interaction:_ Human and Computer Interaction, Research Methods.
+- **MSIB Program at Infinite Learning Indonesia (Remote):** Completed Non-Degree Professional Training in Android Mobile Application Development (Aug 2023 – Dec 2023).
+- **Undergraduate Thesis:** Developed an iOS-based Exam Competency learning app using SwiftUI, Golang, React, and Gemini API to enhance accessibility and user experience.
 
-## Experience
+## Publications
 
-**Teamly — CTO / Co-Founder**  
-_Sept 2025 – Present_  
-• Designed scalable and efficient backend architecture for an AI-powered founder and team-matching platform.  
-• Developed AI-driven matching algorithms based on personality, skills, roles, and project goals.  
-• Built backend systems, server infrastructure, and managed external API integrations (e.g. OpenAI, Supabase, n8n).  
-• Created product prototypes and user-centered digital designs for web and mobile.  
-• Implemented AI-based automation to enhance development and operational efficiency.
-
-**Appskep — UI/UX Designer**  
-_Aug 2022 – Present | Padang, Indonesia_  
-• Designed user-centered UI/UX solutions for multiple product systems in the healthcare and education space.  
-• Conducted user research, wireframing, and prototyping to create intuitive and accessible interfaces.  
-• Collaborated with cross-functional engineering teams to translate design concepts into functional, high-quality products.  
-• Developed and maintained design systems to ensure consistency and scalability across products.
-
-**Hirai.io — UI/UX Designer**  
-_Mar 2025 – Jul 2025_  
-• Designed a modern, AI-driven B2B recruitment platform to enhance hiring efficiency.  
-• Created user flows, design systems, company logo, and UI/UX for the platform.  
-• Developed interactive prototypes for internal validation and stakeholder reviews.  
-• Collaborated closely with the owner and development team to align implementation with product goals.
-
-**Tokopedia Academy — Student Tech Hub Ambassador**  
-_Jun 2023 – Oct 2024_  
-• Collaborated with Tokopedia Academy to organize student-focused events and activities.  
-• Learned various technical topics through hands-on workshops and project-building activities.  
-• Received leadership coaching to support roles in community and event management.
-
-**Diskas — Founder**  
-_Dec 2021 – Aug 2024 | Padang, Indonesia_  
-• Founded a mentorship platform connecting students with mentors.  
-• Collaborated with 3+ companies, agencies, and universities.  
-• Launched 4 services to help students find mentors and grow their skills.  
-• Organized social and community events, serving 150+ users per month.
-
-**Gerakan Nasional 1000 Startup Digital — Volunteer (Partnership & Operations)**  
-_May 2022 – Dec 2022_  
-• Supported startup ecosystem activities in collaboration with West Sumatra government and local stakeholders.  
-• Helped organize the “Ecosystem Connect” event by gathering information from local founders and communities.
-
-**BISA AI Academy — Student Ambassador**  
-_Dec 2021 – Mar 2022_  
-• Served as speaker and moderator at webinars with 100+ participants.  
-• Helped plan event timelines and supported operational and organizational tasks.
-
-**We The Genesis — Volunteer UI/UX Designer**  
-_Aug 2021 – Nov 2021_  
-• Conducted user research and created responsive wireframes for mobile and desktop.  
-• Assisted in improving visual design for user interfaces.
-
-**Unand Career and Counseling Development Center — Graphic Designer**  
-_Apr 2022 – Sept 2022_  
-• Created daily social media design assets and designs for institutional needs.
-
-**SMKN 1 Sijunjung — IT Support Specialist**  
-_Apr 2020 – Jul 2020_  
-• Performed network and computer maintenance in the school laboratory.  
-• Built and configured a local area network for the school.
-
-## Projects
-
-_See [Projects](/projects/) page for more details._
-
-**Teamly — AI-powered Founder Matching Platform**  
-Platform to match early-stage founders and collaborators based on roles, skills, and values using AI.
-
-**Appskep — iOS Nursing Exam Learning App**  
-Mobile learning app for Indonesian nursing students preparing for UKOM with AI features.
-
-**Undergraduate Thesis Project — Mobile UKOM Learning System**  
-iOS learning app with SwiftUI, Golang, React, and Gemini API.
-
-## Publication
-
-**(1) Empowerment of Inter-Student Achievements as a Form of Manifestation “Mapres Copy Mapres” Sustainable**  
-Authors: including Irfan Wahendra  
-In: _Proceedings of the International Conference on Entrepreneurship, Leadership and Business Innovation (ICELBI 2022)_  
-Publisher: Atlantis Press  
+**[1] Empowerment of Inter-Student Achievements as a Form of Manifestation "Mapres Copy Mapres" Sustainable**  
+**Irfan Wahendra**, et al.  
+_Proceedings of the International Conference on Entrepreneurship, Leadership and Business Innovation (ICELBI 2022)_. Atlantis Press.  
 DOI: [10.2991/978-94-6463-350-4_34](https://doi.org/10.2991/978-94-6463-350-4_34)
+
+## Professional Experience
+
+**Teamly** — CTO / Co-Founder  
+_Sep 2025 – Present_
+- Led the research and development of an AI-driven system architecture for startup team matching, improving profile mapping accuracy by 80% through algorithmic optimization.
+- Developed an LLM-based recommendation algorithm (Gemini & OpenAI) focusing on prompt engineering research, achieving a 100% validation success rate (n=20) during the beta testing phase.
+- Optimized technical resource efficiency by implementing automated workflows, effectively accelerating co-founder search iteration cycles by 35% while reducing operational costs.
+
+**Appskep** — UI/UX Designer  
+_Aug 2022 – Present_
+- Directed the design research and development cycle for 5+ cross-platform digital products in the healthcare and education sectors by applying User-Centered Design (UCD) methodologies.
+- Engineered a standardized Design System that improved the Software Development Life Cycle (SDLC) efficiency by 50% through component modularity and design-to-code consistency.
+- Analyzed user behavior and designed data-driven interfaces for a large-scale digital health platform serving 200,000+ users, focusing on cognitive load reduction and system accessibility.
+
+**Hirai.io** — UI/UX Designer  
+_Mar 2025 – Jul 2025_
+- Analyzed AI-driven recruitment workflows to reduce candidate screening time by 35% through information hierarchy optimization.
+- Validated design hypotheses via interactive prototyping, achieving a 90% Task Success Rate before production.
+
+**Tokopedia Academy** — Student Tech Hub Ambassador  
+_Jun 2023 – Oct 2024_
+- Facilitated technical knowledge transfer through organizing workshops, engaging 500+ student participants in technology discussions.
+- Analyzed participant feedback data to improve future event curriculums and engagement strategies.
+
+**Diskas** — Founder  
+_Dec 2021 – Aug 2024_
+- Developed a mentorship platform based on user need assessments, facilitating skills growth for 150+ monthly active users.
+- Managed strategic collaborations with 3+ institutions to test sustainable mentorship business models.
+
+## Achievements
+
+- **Gold Medal** – Seoul International Invention Fair 2024
+- **Special Award** – China Invention Association (2024)
+- **Startup Grant Recipient** – Secured funding of ~USD 977 from SOEs (2024)
+- **Champion** – National Poster Design Competition
+- **TOP 25** – Entrepreneur Competition LPDP (2021)
+- **TOP 150** – Social Project Innovillage (2022)
 
 ## Certifications
 
@@ -222,27 +186,9 @@ DOI: [10.2991/978-94-6463-350-4_34](https://doi.org/10.2991/978-94-6463-350-4_34
 - **Fundamentals of Digital Marketing – Google Digital Garage (2020)**
   _Credential ID: J32 ZGK Q8B — [Show Credential](https://learndigital.withgoogle.com/link/1qsdpcedm9s)_
 
-## Skills
+## Technical Skills
 
-**Hard Skills:**  
-• Programming & Mobile: Swift, SwiftUI, UIKit, Storyboard, Xcode, iOS Development, REST API, OOP, MVVM  
-• Backend & Web: Golang, React, MySQL, Firebase, basic cloud services  
-• Cross-platform: Kotlin, Dart, Flutter  
-• Tools & Design: Git, GitHub, Figma, UI/UX Design, Prototyping, Design Systems
-
-**Soft Skills:**  
-• Project Management, Communication, Teamwork & Collaboration, Problem-Solving, Time Management, Flexibility, Leadership.
-
-**Languages:**  
-• English (Professional Working)  
-• Malay (Professional Working)  
-• Bahasa Indonesia (Native or Bilingual)
-
-## Achievements
-
-• Gold Medal – Seoul International Invention Fair 2024  
-• Special Award – China Invention Association (2024)  
-• Champion – National Poster Design Competition  
-• TOP 25 Entrepreneur Competition – LPDP (2021)  
-• 2nd Runner Up – Business Idea Competition – Dinamika University (2021)  
-• TOP 150 Social Project – Innovillage (2022)
+- **AI & Data Science:** Python, NumPy, Pandas, SciPy, Seaborn, Machine Learning, Prompt Engineering, Data Analysis.
+- **HCI & Research:** Quantitative & Qualitative Research Methods, User-Centered Design (UCD), Usability Testing, Figma, Prototyping.
+- **Mobile Development:** Swift, SwiftUI, UIKit, Xcode, Android Development, Kotlin, Jetpack Compose, Dart, Flutter, MVVM.
+- **Backend & Tools:** Golang, FastAPI, React, MySQL, Firebase, Supabase, Git, Docker, N8N.

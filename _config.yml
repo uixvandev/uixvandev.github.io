@@ -12,7 +12,7 @@ site_theme: "air" # Currently available options are "default", "air"
 title: "Irfan Wahendra"
 title_separator: "-"
 name: &name "Irfan Wahendra"
-description: &description "Information Systems Undergraduate • Product, Mobile & AI Research Enthusiast • CTO @Teamly"
+description: &description "Information Systems Undergraduate • Mobile Agentic AI & Human-AI Interaction Research • CTO @Teamly"
 url:
   https://uixvandev.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
   # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
@@ -27,7 +27,7 @@ author:
   avatar: "profile.png" # You might want to update this if you have a profile image
   name: "Irfan Wahendra"
   pronouns: # example: "she/her"
-  bio: "Information Systems Undergraduate • Product, Mobile & AI Research Enthusiast • CTO @Teamly"
+  bio: "Information Systems Undergraduate • Mobile Agentic AI & Human-AI Interaction Research • CTO @Teamly"
   location: "Padang, West Sumatra, Indonesia"
   employer: "Teamly • Appskep"
   uri: # URL
