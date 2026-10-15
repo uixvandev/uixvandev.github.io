@@ -1,0 +1,157 @@
+/* ==========================================================================
+   ACADEMIC LAYER
+   Serif reading text, hairline structure, roman section numerals.
+   Colors are defined in _sass/theme/_air_{light,dark}.scss.
+   ========================================================================== */
+
+$site-font: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+
+body {
+  font-family: $site-font;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  font-feature-settings: "liga", "kern";
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $site-font;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.site-title {
+  font-family: $site-font;
+  font-size: $type-size-4;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+/* Masthead: paper ground with a single hairline, no elevation */
+.masthead {
+  background-color: var(--global-bg-color);
+  border-bottom: 1px solid var(--global-border-color);
+  box-shadow: none;
+}
+
+/* Page */
+
+.page__inner-wrap {
+  max-width: 42em;
+}
+
+.page__title {
+  font-size: $type-size-1;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+}
+
+.page__content {
+  counter-reset: section;
+
+  /* Sections are numbered in roman numerals, separated by a hairline */
+  h2 {
+    counter-increment: section;
+    margin-top: 2.6em;
+    padding: 0.9em 0 0;
+    border-bottom: 0;
+    border-top: 1px solid var(--global-border-color);
+    font-size: $type-size-4;
+    font-weight: 600;
+
+    &::before {
+      content: counter(section, upper-roman) ".";
+      display: inline-block;
+      min-width: 2.4em;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--global-link-color-hover);
+    }
+  }
+
+  h3 {
+    font-size: $type-size-5;
+  }
+
+  p {
+    margin-bottom: 1.1em;
+  }
+
+  li {
+    margin-bottom: 0.35em;
+  }
+
+  a {
+    color: var(--global-text-color);
+    text-decoration: underline;
+    text-decoration-color: var(--global-text-color-light);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+
+    &:hover {
+      color: var(--global-link-color-hover);
+      text-decoration-color: currentColor;
+    }
+  }
+
+  hr {
+    border-top-color: var(--global-border-color);
+    margin: 2.5em 0;
+  }
+}
+
+/* Sidebar: author card */
+
+.author__avatar img {
+  border: 1px solid var(--global-border-color);
+  border-radius: $border-radius;
+}
+
+.author__name,
+.sidebar .author__name {
+  font-family: $site-font;
+  font-size: $type-size-4;
+  font-weight: 600;
+}
+
+.author__bio {
+  color: var(--global-text-color-light);
+  font-size: $type-size-6;
+  line-height: 1.5;
+}
+
+.author__urls {
+  li {
+    color: var(--global-text-color-light);
+  }
+
+  li i.fa-fw,
+  li i.ai {
+    color: var(--global-text-color-light);
+  }
+
+  a {
+    color: var(--global-text-color);
+
+    &:hover {
+      color: var(--global-link-color-hover);
+    }
+  }
+}
+
+/* Footer: same paper ground, hairline above, no colored band */
+
+.page__footer {
+  background-color: var(--global-footer-bg-color);
+  border-top: 1px solid var(--global-border-color);
+  color: var(--global-text-color-light);
+
+  footer a {
+    color: var(--global-text-color-light);
+
+    &:hover {
+      color: var(--global-link-color-hover);
+    }
+  }
+}

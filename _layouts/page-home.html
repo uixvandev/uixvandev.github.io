@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+{% include base_path %}
+
+<main id="main" class="home" role="main">
+  <header class="hero glass">
+    <div class="hero__text">
+      <h1 class="hero__name">{{ page.title | upcase }}</h1>
+    </div>
+  </header>
+
+  <div class="home__content">
+    {{ content }}
+  </div>
+</main>
