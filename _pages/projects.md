@@ -4,6 +4,8 @@ title: "Projects"
 permalink: /projects/
 ---
 
+<div class="project-grid project-grid--three" markdown="1">
+
 <section class="card" markdown="1">
 
 ## [Teamly](https://teamly.asia), AI-powered Founder Matching Platform
@@ -52,5 +54,7 @@ permalink: /projects/
 - Focused on enhancing user experience for nursing exam preparation through AI-driven features.
 
 </section>
+
+</div>
 
 <p class="hint">Other smaller projects include design systems, UI/UX case studies, and experiments.</p>
