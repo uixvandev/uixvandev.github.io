@@ -29,7 +29,7 @@ author:
   pronouns: # example: "she/her"
   bio: "Information Systems Undergraduate • Mobile Agentic AI & Human-AI Interaction Research • CTO @Teamly"
   location: "Padang, West Sumatra, Indonesia"
-  employer: "Teamly • Appskep"
+  employer: "GAIA Dental Clinic • Teamly"
   uri: # URL
   email: "irfanwahendra.mail@gmail.com"
 
@@ -171,6 +171,8 @@ exclude:
   - assets/js/plugins
   - assets/js/vendor
   - CHANGELOG
+  - CLAUDE.md
+  - DESIGN.md
   - Capfile
   - config
   - Dockerfile

@@ -1,0 +1,79 @@
+---
+layout: default
+---
+
+{% include base_path %}
+
+<main id="main" class="home" role="main">
+  <header class="hero glass">
+    <div class="hero__text">
+      <p class="note">my name is</p>
+      <h1 class="hero__name">{{ site.author.name | upcase }}</h1>
+      <p class="hero__headline">
+        Exploring how AI can help teams build better products.
+      </p>
+
+      <ul class="hero__tags">
+        <li>Information Systems</li>
+        <li>IT Development Officer @ GAIA</li>
+        <li>{{ site.author.location }}</li>
+      </ul>
+
+      <div class="hero__actions">
+        <a class="btn-3d btn-3d--primary" href="mailto:{{ site.author.email }}"
+          >Contact me</a
+        >
+        <a class="btn-3d" href="{{ base_path }}/projects/">View projects</a>
+      </div>
+
+      {% include social-links.html %}
+    </div>
+
+    <img
+      class="hero__photo"
+      src="{{ base_path }}/images/profile.png"
+      alt="{{ site.author.name }}"
+    />
+
+    <svg class="hero__cursor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M4 2 L4 19 L8.5 15 L11.5 21.5 L14 20.5 L11 14.5 L17 14.5 Z" />
+    </svg>
+  </header>
+
+  <div class="home__content">{{ content }}</div>
+</main>
+
+<script>
+  /* Sticky tab list: marks the tab whose section is in the reading band */
+  (function () {
+    var links = document.querySelectorAll(".jump a");
+    var pairs = [];
+    links.forEach(function (a) {
+      var el = document.getElementById(a.getAttribute("href").slice(1));
+      if (el) pairs.push({ link: a, target: el });
+    });
+    if (!pairs.length || !("IntersectionObserver" in window)) return;
+
+    function activate(target) {
+      pairs.forEach(function (p) {
+        var on = p.target === target;
+        p.link.classList.toggle("is-active", on);
+        if (on) p.link.setAttribute("aria-current", "true");
+        else p.link.removeAttribute("aria-current");
+      });
+    }
+
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) activate(entry.target);
+        });
+      },
+      { rootMargin: "-30% 0px -60% 0px" }
+    );
+
+    pairs.forEach(function (p) {
+      io.observe(p.target);
+    });
+  })();
+</script>

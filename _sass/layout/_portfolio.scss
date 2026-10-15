@@ -1,0 +1,711 @@
+/* ==========================================================================
+   PORTFOLIO LAYER
+   Grid ground, glass panels with 3D depth, sticker tags, pixel name.
+   Overrides _academic.scss where the two meet.
+   ========================================================================== */
+
+/* Palette: navy core, white and cool neutrals, one blue accent */
+:root {
+  --navy: #14284b;
+  --ground: #eef2f7;
+  --grid-line: rgba(20, 40, 75, 0.08);
+  --ink: #111c30;
+  --ink-soft: #4a5870;
+  --accent: #2a64c8;
+  --on-navy: #ffffff;
+  --chip: #ffffff;
+  --on-chip: #14284b;
+  --glass-top: rgba(255, 255, 255, 0.82);
+  --glass-bottom: rgba(255, 255, 255, 0.4);
+  --glass-edge: rgba(255, 255, 255, 0.95);
+  --glass-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.98),
+    inset 0 -1px 0 rgba(20, 40, 75, 0.05), 0 1px 2px rgba(20, 40, 75, 0.08),
+    0 24px 44px -24px rgba(20, 40, 75, 0.38);
+  --radius: 20px;
+}
+
+html[data-theme="dark"] {
+  --navy: #00d0ff;
+  --ground: #0b1424;
+  --grid-line: rgba(160, 190, 230, 0.06);
+  --ink: #e8eef8;
+  --ink-soft: #9fb0c8;
+  --accent: #00d0ff;
+  --on-navy: #0b1424;
+  --chip: #16243b;
+  --on-chip: #e8eef8;
+  --glass-top: rgba(255, 255, 255, 0.08);
+  --glass-bottom: rgba(255, 255, 255, 0.02);
+  --glass-edge: rgba(160, 190, 230, 0.18);
+  --glass-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 24px 48px -24px rgba(0, 0, 0, 0.7);
+}
+
+@mixin glass-panel {
+  position: relative;
+  background: linear-gradient(155deg, var(--glass-top), var(--glass-bottom));
+  border: 1px solid var(--glass-edge);
+  border-radius: var(--radius);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+
+  /* glossy sheen across the top-left: the "glass" read */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 0) 40%
+    );
+  }
+}
+
+/* Ground: the grid behind everything, as in the reference sheet */
+
+body {
+  background-color: var(--global-bg-color);
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-attachment: fixed;
+  color: var(--ink);
+}
+
+.glass {
+  @include glass-panel;
+}
+
+/* Masthead: glass bar */
+
+.masthead {
+  background: linear-gradient(180deg, var(--glass-top), var(--glass-bottom));
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border-bottom: 1px solid var(--glass-edge);
+  box-shadow: var(--glass-shadow);
+}
+
+/* Nav items sit on the glass bar: no solid fills of their own, even padding */
+
+.masthead__inner-wrap {
+  padding: 0.6rem 1.5rem;
+}
+
+.greedy-nav,
+.greedy-nav button,
+.masthead__menu-item {
+  background: transparent;
+}
+
+.greedy-nav {
+  a {
+    padding: 0.55rem 0;
+  }
+
+  .visible-links a:before {
+    height: 2px;
+    background: var(--accent);
+  }
+
+  button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+}
+
+.page__footer {
+  background: transparent;
+  border-top: 1px solid var(--glass-edge);
+
+  footer {
+    text-align: center;
+  }
+
+  .page__footer-copyright {
+    float: none;
+    text-align: center;
+  }
+}
+
+/* Social icons: hero card and footer */
+
+.social-links {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 10px;
+    border: 1px solid var(--glass-edge);
+    background: var(--glass-top);
+    color: var(--ink);
+    box-shadow: 0 3px 0 rgba(20, 40, 75, 0.15);
+    transition: transform 0.15s ease, color 0.15s ease;
+
+    i {
+      font-size: 1.1rem;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+  }
+}
+
+.page__footer .social-links {
+  justify-content: center;
+  margin: 0 0 1rem;
+}
+
+.home__content img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Navbar: the visible links sit in the middle of the bar; the toggle stays at the right edge */
+.greedy-nav .visible-links {
+  margin: 0 auto;
+}
+
+/* Other pages: content sits on a glass sheet */
+
+.page__inner-wrap {
+  @include glass-panel;
+  padding: clamp(1.25rem, 3vw, 2.25rem);
+}
+
+/* Home */
+
+.home {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 0 3rem;
+  perspective: 1400px;
+}
+
+.note {
+  font-family: "Caveat", cursive;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  color: var(--ink-soft);
+  margin: 0 0 0.25rem;
+}
+
+/* Hero */
+
+.hero {
+  @include glass-panel;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 2rem;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  margin-bottom: 1.5rem;
+}
+
+/* Ambient cursor: a decorative pointer that roams the hero. Owner request;
+   overrides the MOTION 1 dial for this one element. Hidden for reduced motion. */
+.hero__cursor {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  left: 10%;
+  top: 60%;
+  pointer-events: none;
+  z-index: 2;
+  animation: hero-cursor-roam 14s ease-in-out infinite;
+
+  path {
+    fill: var(--navy);
+    stroke: var(--ground);
+    stroke-width: 1.5;
+    stroke-linejoin: round;
+  }
+}
+
+@keyframes hero-cursor-roam {
+  0%   { left: 10%; top: 60%; }
+  20%  { left: 58%; top: 18%; }
+  40%  { left: 82%; top: 62%; }
+  60%  { left: 46%; top: 80%; }
+  80%  { left: 22%; top: 30%; }
+  100% { left: 10%; top: 60%; }
+}
+
+.hero__name {
+  display: inline-block;
+  font-family: "Silkscreen", "Bricolage Grotesque", sans-serif;
+  font-size: clamp(2rem, 6vw, 3.8rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+  margin: 0.2em 0 0.6em;
+  padding: 0.12em 0.35em;
+  outline: 2px solid var(--accent);
+  outline-offset: 10px;
+}
+
+.hero__headline {
+  font-size: clamp(1.3rem, 2.6vw, 1.8rem);
+  font-weight: 600;
+  line-height: 1.25;
+  max-width: 24ch;
+  margin: 0 0 1.25rem;
+}
+
+.hero__photo {
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--glass-edge);
+  box-shadow:
+    0 2px 0 rgba(28, 27, 25, 0.12),
+    0 20px 36px -18px rgba(28, 27, 25, 0.5);
+
+  /* tilted 4 degrees to the right */
+  transform: rotate(4deg);
+}
+
+/* Tags: navy and white stickers with a 3D lip */
+
+.hero__tags,
+.tags,
+.chips {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+
+  li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0.45rem 0.9rem;
+
+    i {
+      width: 1em;
+      text-align: center;
+      font-size: 0.9em;
+    }
+
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--on-navy);
+    background: var(--navy);
+    box-shadow:
+      0 3px 0 rgba(10, 20, 40, 0.3),
+      0 8px 16px -8px rgba(20, 40, 75, 0.45);
+
+    &:nth-child(even) {
+      color: var(--on-chip);
+      background: var(--chip);
+      box-shadow:
+        0 3px 0 rgba(20, 40, 75, 0.18),
+        0 8px 16px -8px rgba(20, 40, 75, 0.3);
+    }
+  }
+}
+
+/* Split sections: heading on the left, content on the right (RHYTHM 2) */
+
+.home__content .card > :last-child {
+  margin-bottom: 0;
+}
+
+.home__content .card--split {
+  display: grid;
+  grid-template-columns: minmax(160px, 220px) minmax(0, 1fr);
+  gap: 1.5rem 2rem;
+  align-items: start;
+
+  h2 {
+    margin: 0;
+  }
+
+  > :not(h2) {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 720px) {
+  .home__content .card--split {
+    grid-template-columns: 1fr;
+
+    > :not(h2) {
+      grid-column: auto;
+    }
+  }
+}
+
+/* Buttons: pressable 3D */
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.btn-3d {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  border: 1px solid var(--glass-edge);
+  background: var(--glass-top);
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow:
+    0 4px 0 rgba(28, 27, 25, 0.22),
+    var(--glass-shadow);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 rgba(28, 27, 25, 0.22);
+  }
+
+  &--primary {
+    background: var(--navy);
+    color: var(--on-navy);
+    border-color: transparent;
+  }
+}
+
+/* Content cards */
+
+.home__content {
+  .card {
+    @include glass-panel;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    margin: 0 0 1.5rem;
+    font-size: 1rem;
+    line-height: 1.65;
+
+    &:hover {
+      transform: translateY(-3px) rotateX(1.5deg);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.95),
+        0 34px 56px -26px rgba(28, 27, 25, 0.5);
+    }
+  }
+
+  h2 {
+    margin: 0 0 1rem;
+    padding: 0;
+    border: 0;
+    font-size: 1.55rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+
+    &::before {
+      content: none;
+    }
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    margin: 1.4rem 0 0.4rem;
+  }
+
+  ul {
+    padding-left: 1.25rem;
+  }
+
+  p {
+    margin-bottom: 0.9em;
+  }
+}
+
+/* Projects */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.project {
+  @include glass-panel;
+  margin: 0;
+  padding: 1.1rem 1.1rem 1.25rem;
+
+  h3 {
+    font-size: 1.2rem;
+    margin: 0 0 0.3rem;
+  }
+
+  p {
+    margin: 0.5rem 0 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+}
+
+.project__media {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--glass-edge);
+  margin: 0 0 0.9rem;
+}
+
+/* Links inside cards: underline with the ink, accent on hover */
+
+.home__content a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+
+  &:hover {
+    color: var(--accent);
+  }
+}
+
+/* Two-column body: sticky tab list on the left, sections on the right */
+
+.home-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.home-main {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.home-main > section,
+.home-main > .projects {
+  scroll-margin-top: 96px;
+}
+
+.jump {
+  position: sticky;
+  top: 96px;
+  flex: 0 0 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0 0 1.5rem;
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.55rem 0.8rem;
+    border-radius: 10px;
+    border: 1px solid var(--glass-edge);
+    background: var(--glass-top);
+    color: var(--ink);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 2px 0 rgba(20, 40, 75, 0.12);
+    transition: transform 0.15s ease;
+
+    i {
+      width: 1.1rem;
+      text-align: center;
+      color: var(--accent);
+    }
+
+    &:hover,
+    &:focus-visible {
+      transform: translateX(3px);
+      color: var(--accent);
+    }
+
+    /* the section currently in view */
+    &.is-active,
+    &[aria-current="true"] {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: var(--on-navy);
+
+      i {
+        color: var(--on-navy);
+      }
+    }
+  }
+}
+
+@media (max-width: 860px) {
+  .home-body {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .jump {
+    position: sticky;
+    top: 70px;
+    z-index: 2;
+    flex: none;
+    flex-direction: row;
+    overflow-x: auto;
+    width: 100%;
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+
+    a {
+      flex: 0 0 auto;
+      white-space: nowrap;
+    }
+  }
+}
+
+/* Collapsible groups: the page stays short, every entry stays one click away */
+
+.home__content details.group {
+  margin: 0 0 0.75rem;
+  border-radius: 12px;
+  border: 1px solid var(--glass-edge);
+  background: var(--glass-top);
+  box-shadow: 0 2px 0 rgba(20, 40, 75, 0.1);
+
+  > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.9rem 1.1rem;
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    /* chevron on the right, rotates when open */
+    &::after {
+      content: "";
+      flex: 0 0 auto;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-right: 2px solid var(--accent);
+      border-bottom: 2px solid var(--accent);
+      transform: rotate(45deg) translate(-2px, -2px);
+      transition: transform 0.2s ease;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: -2px;
+      border-radius: 12px;
+    }
+  }
+
+  &[open] > summary::after {
+    transform: rotate(225deg) translate(-2px, -2px);
+  }
+
+  &[open] > summary {
+    border-bottom: 1px solid var(--glass-edge);
+  }
+
+  > ul {
+    margin: 0;
+    padding: 0.9rem 1.1rem 1rem 2.2rem;
+  }
+}
+
+.home__content .hint {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin: 0 0 1rem;
+}
+
+/* Skill chips, grouped by area */
+
+.skill-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.skill-group {
+  h3 {
+    font-size: 1rem;
+    margin: 0 0 0.6rem;
+  }
+}
+
+.home__content .chips {
+  padding: 0;
+  margin: 0;
+}
+
+/* Responsive */
+
+@media (max-width: 640px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__photo {
+    width: 140px;
+    height: 140px;
+    order: -1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glass,
+  .card,
+  .btn-3d {
+    transition: none;
+  }
+
+  .hero__cursor {
+    display: none;
+  }
+
+  .home__content .card:hover {
+    transform: none;
+  }
+}
