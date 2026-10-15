@@ -93,8 +93,8 @@ An iOS learning app built with SwiftUI and Golang, using the Gemini API for pers
 ## Education {#education}
 
 **Universitas Andalas**, Padang, Indonesia  
-_Bachelor of Information Systems (GPA 3.41/4.00)_  
-_Aug 2021 – Feb 2026 (Expected)_
+_Bachelor of Information Systems (GPA 3.46/4.00)_  
+_Aug 2021 – Apr 2026_
 
 - **Relevant Coursework:**
   - _AI & Data Science:_ Machine Learning Applications, Decision Support Systems, Data Mining, Data Analysis and Visualization.
@@ -122,33 +122,39 @@ DOI: [10.2991/978-94-6463-350-4_34](https://doi.org/10.2991/978-94-6463-350-4_34
 
 **GAIA Dental Clinic**, IT Development Officer  
 _Aug 2026 – Present_
+
 - Pioneered IT development at a dental clinic group with more than seven branches across Indonesia.
 - Built a system for the clinic group on a microservices architecture and carried it through every stage: requirements analysis, planning, system design, implementation, testing, and delivery to end users.
 
 **Teamly**, CTO / Co-Founder  
 _Sep 2025 – Present_
+
 - Led the research and development of an AI-driven system architecture for startup team matching, improving profile mapping accuracy by 80% through algorithmic optimization.
 - Developed an LLM-based recommendation algorithm (Gemini & OpenAI) focusing on prompt engineering research, achieving a 100% validation success rate (n=20) during the beta testing phase.
 - Optimized technical resource efficiency by implementing automated workflows, effectively accelerating co-founder search iteration cycles by 35% while reducing operational costs.
 
 **Appskep**, UI/UX Designer  
 _Aug 2022 – Aug 2026_
+
 - Directed the design research and development cycle for 5+ cross-platform digital products in the healthcare and education sectors by applying User-Centered Design (UCD) methodologies.
 - Engineered a standardized Design System that improved the Software Development Life Cycle (SDLC) efficiency by 50% through component modularity and design-to-code consistency.
 - Analyzed user behavior and designed data-driven interfaces for a large-scale digital health platform serving 200,000+ users, focusing on cognitive load reduction and system accessibility.
 
 **Hirai.io**, UI/UX Designer  
 _Mar 2025 – Jul 2025_
+
 - Analyzed AI-driven recruitment workflows to reduce candidate screening time by 35% through information hierarchy optimization.
 - Validated design hypotheses via interactive prototyping, achieving a 90% Task Success Rate before production.
 
 **Tokopedia Academy**, Student Tech Hub Ambassador  
 _Jun 2023 – Oct 2024_
+
 - Facilitated technical knowledge transfer through organizing workshops, engaging 500+ student participants in technology discussions.
 - Analyzed participant feedback data to improve future event curriculums and engagement strategies.
 
 **Diskas**, Founder  
 _Dec 2021 – Aug 2024_
+
 - Developed a mentorship platform based on user need assessments, facilitating skills growth for 150+ monthly active users.
 - Managed strategic collaborations with 3+ institutions to test sustainable mentorship business models.
 
