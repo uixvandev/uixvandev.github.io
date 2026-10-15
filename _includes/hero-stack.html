@@ -1,0 +1,43 @@
+{% include base_path %}
+{% capture hero_list %}{% for f in site.static_files %}{% if f.path contains '/images/hero/' %}{% assign ext = f.extname | downcase %}{% if ext == '.jpg' or ext == '.jpeg' or ext == '.png' or ext == '.webp' or ext == '.gif' %}{{ f.path }}|{% endif %}{% endif %}{% endfor %}{% endcapture %}
+{% assign hero_paths = hero_list | split: '|' | sort %}
+
+{% if hero_paths.size > 0 %}
+<button type="button" class="photo-stack" aria-label="Show next photo">
+  {% for p in hero_paths %}
+  <img class="photo-stack__card" src="{{ base_path }}{{ p }}" alt="{{ site.author.name }}, photo {{ forloop.index }} of {{ hero_paths.size }}" loading="lazy" decoding="async" />
+  {% endfor %}
+</button>
+{% else %}
+<img class="hero__photo" src="{{ base_path }}/images/profile.png" alt="{{ site.author.name }}" />
+{% endif %}
+
+<script>
+  /* Photo stack: click or press Enter/Space on the top photo to send it to the back */
+  (function () {
+    var stack = document.querySelector(".photo-stack");
+    if (!stack) return;
+
+    var cards = Array.prototype.slice.call(stack.querySelectorAll(".photo-stack__card"));
+    var order = cards.slice();
+    var total = cards.length;
+
+    function layout() {
+      order.forEach(function (card, i) {
+        card.style.setProperty("--i", i);
+      });
+      var top = cards.indexOf(order[0]) + 1;
+      stack.setAttribute("aria-label", "Show next photo (" + top + " of " + total + ")");
+    }
+
+    if (total > 1) {
+      stack.classList.add("is-stack");
+      stack.addEventListener("click", function () {
+        order.push(order.shift());
+        layout();
+      });
+    }
+
+    layout();
+  })();
+</script>

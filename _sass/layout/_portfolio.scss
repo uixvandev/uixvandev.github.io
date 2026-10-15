@@ -96,32 +96,159 @@ body {
   box-shadow: var(--glass-shadow);
 }
 
-/* Nav items sit on the glass bar: no solid fills of their own, even padding */
+/* Navbar: one row. Desktop shows every link centered; below 860px the links
+   move into a toggled panel and only the brand and actions stay in the bar. */
 
 .masthead__inner-wrap {
   padding: 0.6rem 1.5rem;
 }
 
-.greedy-nav,
-.greedy-nav button,
-.masthead__menu-item {
-  background: transparent;
+.site-nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 
-.greedy-nav {
-  a {
-    padding: 0.55rem 0;
-  }
+.site-nav__brand {
+  font-weight: 700;
+  white-space: nowrap;
+  color: var(--global-masthead-link-color);
+  text-decoration: none;
+}
 
-  .visible-links a:before {
-    height: 2px;
-    background: var(--accent);
-  }
+.site-nav__links,
+.site-nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-  button:focus-visible {
+.site-nav a {
+  position: relative;
+  padding: 0.55rem 0;
+  color: var(--global-masthead-link-color);
+  text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--global-masthead-link-color-hover);
+  }
+}
+
+.site-nav #theme-toggle a {
+  cursor: pointer;
+  display: inline-flex;
+}
+
+/* Burger: three bars that turn into an X when open */
+
+.site-nav__toggle {
+  display: none;
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 1px solid var(--glass-edge);
+  border-radius: 10px;
+  background: var(--glass-top);
+  color: var(--ink);
+  cursor: pointer;
+
+  &:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
-    border-radius: 6px;
+  }
+}
+
+.site-nav__bars,
+.site-nav__bars::before,
+.site-nav__bars::after {
+  position: absolute;
+  left: 50%;
+  width: 1.1rem;
+  height: 2px;
+  background: currentColor;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.site-nav__bars {
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  &::before,
+  &::after {
+    content: "";
+    left: 0;
+    top: 0;
+  }
+
+  &::before {
+    transform: translateY(-6px);
+  }
+
+  &::after {
+    transform: translateY(6px);
+  }
+}
+
+.site-nav.is-open .site-nav__bars {
+  background: transparent;
+
+  &::before {
+    transform: translateY(0) rotate(45deg);
+  }
+
+  &::after {
+    transform: translateY(0) rotate(-45deg);
+  }
+}
+
+@media (max-width: 860px) {
+  .site-nav {
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .site-nav__links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin-top: 0.6rem;
+    padding: 0.5rem 1.25rem;
+    border: 1px solid var(--glass-edge);
+    border-radius: 14px;
+    background: var(--chip);
+    box-shadow: var(--glass-shadow);
+  }
+
+  .site-nav.is-open .site-nav__links {
+    display: flex;
+  }
+
+  .site-nav__links a {
+    display: block;
+    padding: 0.75rem 0;
+    color: var(--on-chip);
+  }
+
+  .site-nav__toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .site-nav__actions {
+    gap: 0.6rem;
   }
 }
 
@@ -187,11 +314,6 @@ body {
 .home__content img {
   max-width: 100%;
   height: auto;
-}
-
-/* Navbar: the visible links sit in the middle of the bar; the toggle stays at the right edge */
-.greedy-nav .visible-links {
-  margin: 0 auto;
 }
 
 /* Other pages: content sits on a glass sheet */
@@ -293,6 +415,51 @@ body {
 
   /* tilted 4 degrees to the right */
   transform: rotate(4deg);
+}
+
+/* Photo stack: drop images into images/hero/ and they stack here, one card each.
+   The top card is tilted 4 degrees; cards underneath fan out and fade. */
+
+.photo-stack {
+  position: relative;
+  width: 250px;
+  height: 300px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: default;
+  -webkit-tap-highlight-color: transparent;
+
+  &.is-stack {
+    cursor: pointer;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 8px;
+    border-radius: 14px;
+  }
+}
+
+.photo-stack__card {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 2px solid var(--glass-edge);
+  box-shadow:
+    0 2px 0 rgba(20, 40, 75, 0.12),
+    0 20px 36px -18px rgba(20, 40, 75, 0.5);
+  transform-origin: 50% 80%;
+  transform: translate(calc(var(--i, 0) * 12px), calc(var(--i, 0) * 10px))
+    rotate(calc(4deg - var(--i, 0) * 3deg));
+  z-index: calc(10 - var(--i, 0));
+  opacity: clamp(0, calc(4 - var(--i, 0)), 1);
+  pointer-events: none;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.5s ease;
 }
 
 /* Tags: navy and white stickers with a 3D lip */
@@ -687,10 +854,161 @@ body {
     grid-template-columns: 1fr;
   }
 
+  .photo-stack {
+    width: 160px;
+    height: 190px;
+    order: -1;
+  }
+
   .hero__photo {
     width: 140px;
     height: 140px;
     order: -1;
+  }
+}
+
+/* Motion: entrances play once, hover and press stay, and the only loop is the
+   hero cursor (declared exception). Everything here is switched off for reduced motion. */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.hero {
+  animation: hero-in 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    translate: 0 18px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+/* Projects page: exactly three columns on desktop, one column on small screens */
+
+.project-grid--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 1.25rem;
+
+  > section.card {
+    margin: 0;
+    height: 100%;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .project-grid--three {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Scroll-driven reveal (CSS only). Content is visible by default; the fade-up
+   runs only where the browser supports view timelines and motion is allowed. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .home__content section.card {
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
+
+    .home__content .chips li,
+    .home__content .tags li {
+      animation: chip-in linear both;
+      animation-timeline: view();
+      animation-range: entry 10% entry 50%;
+    }
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    translate: 0 40px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes chip-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.home__content details.group[open] > ul {
+  animation: fold-in 0.35s ease both;
+}
+
+@keyframes fold-in {
+  from {
+    opacity: 0;
+    translate: 0 -4px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+.site-nav.is-open .site-nav__links {
+  animation: menu-in 0.25s ease both;
+}
+
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    translate: 0 -6px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+.jump a {
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.15s ease;
+}
+
+.project {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.project:hover {
+  transform: translateY(-3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero,
+  .site-nav.is-open .site-nav__links,
+  .home__content details.group[open] > ul {
+    animation: none;
   }
 }
 

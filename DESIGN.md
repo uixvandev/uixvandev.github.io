@@ -25,7 +25,7 @@ Direction for the personal site of Irfan Wahendra. Written from the owner's answ
 - ENERGY 3 / RHYTHM 2 / MOTION 1.
 - ENERGY 3: pixel name, sticker tags, bold glass.
 - RHYTHM 2: sections vary: some split heading-left and content-right, others full width.
-- MOTION 1: hover states and press feedback only. No loops.
+- MOTION 2: sections fade up once on scroll, chips stagger in, hover and menu transitions. No loops except the hero cursor (owner exception). Reduced motion turns all of it off.
 
 ## Owner decisions
 - Keep glass and shadow on panels (overrides the 1 to 2 element dose cap).
